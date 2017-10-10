@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aukcja</title>
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+<div id="menu">
+    <a href="#">Aukcja</a>
+    <a href="#">Nowy sprzęt</a>
+</div>
+<div id="content">
+    <div id="left-menu">
+        <ul>
+        </ul>
+    </div>
+    <div id="article">
+        <h3></h3>
+        <ul>
+        </ul>
+        <div id="description"></div>
+    </div>
+</div>
+<div id="comments">
+    <div class="btn btn-primary" onclick="showModal()">
+        Zgłoś ofertę</div>
+    <div id="commentExample">
+        <div class="comment-header">
+            <div class="user"></div>
+            <div class="date"></div>
+        </div>
+        <div class="price"></div>
+    </div>
+</div>
+
+<div class="modal-content"  id="myModal" style="display:none">
+    <div class="modal-header">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Czy chcesz licytować ten sprzęt?</h2>
+    </div>
+    <div class="modal-body">
+        <label>Twoja propozycja</label>
+        <div class="form-control">
+            <span class="input"><i class="fa fa-usd" aria-hidden="true"></i></span>
+            <input class="input" name="price">
+        </div>
+        <div onclick="addOffer()" class="btn btn-primary">
+            Zatwierdź</div>
+    </div>
+    <div class="modal-footer">
+        <h3>Wystawiając propozycję akceptujesz
+            <a href="#">regulamin</a>
+        </h3>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
