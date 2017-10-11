@@ -4,65 +4,196 @@
     <meta charset="UTF-8">
     <title>Aukcja</title>
     <link rel="stylesheet" href="styles/site.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/349ff579cf.js"></script>
-    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
 </head>
-<body>
-<div id="menu">
-    <a href="#">Aukcja</a>
-    <a href="#">Nowy sprzęt</a>
+<<body>
+<div class="nav justify-content-center" id="menu">
+    <a class="nav-item  nav-link" data-toggle="tab" role="tab"  href="#article">
+        Aukcja
+    </a>
+    <a class="nav-item nav-link" data-toggle="tab" role="tab" href="#add-hardware">
+        Nowy sprzęt
+    </a>
 </div>
-<div id="content">
-    <div id="left-menu">
-        <ul>
+<div id="content" class="row tab-content">
+    <div id="left-menu" class="col-md-3 jumbotron">
+        <ul class="list-group">
         </ul>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <div id="article">
-        <h3></h3>
-        <ul>
-        </ul>
-        <div id="description"></div>
+
+    <div id="accordion" role="tablist" class="col-md-6 jumbotron" aria-multiselectable="true">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Obraz
+                    </a>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-text" id="description">Image</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        O itemie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block">
+                    <div class="card">
+                        <div class="card-header"></div>
+                        <div class="card-block">
+                            <ul>
+                            </ul>
+                            <div class="card-text" id="description"></div>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Opinie
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="card-text" id="description">Opinions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Form to add item -->
+    <div id="add-hardware" class="tab-pane form jumbotron col-md-9" role="tabpanel">
+        <div class="dropdown col-md-3" id="catDropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Kategoria
+            </button>
+            <div class="dropdown-menu" id="category" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item small-item" href="#">Laptop</a>
+                <a class="dropdown-item small-item" href="#">Tablet</a>
+                <a class="dropdown-item small-item" href="#">2w1</a>
+                <a class="dropdown-item " id="desktop" href="#">Stacjonarny</a>
+            </div>
+        </div>
+        <div class="input-group form-group justify-left">
+            <span class="input-group-addon col-md-3 text-left">Nazwa</span>
+            <input class="form-control col-md-6" name="name">
+            <div class="form-control-feedback col-md-3"></div>
+        </div>
+
+        <div class="input-group form-group justify-left" id="resolution-group">
+            <span class="input-group-addon col-md-3 text-left">Rozdzielczość</span>
+            <input class="form-control col-md-6" name="resolution">
+        </div>
+
+        <div class="input-group form-group text-left">
+            <span class="input-group-addon col-md-3 text-left">Procesor</span>
+            <input class="form-control col-md-6" name="procesor">
+        </div>
+
+        <div class="input-group form-group text-left">
+            <span class="input-group-addon col-md-3 text-left">Cena początkowa</span>
+            <span class="input-group-addon">
+                    <input  type="checkbox" data-content="Odznacz jeżeli nieznana"
+                            title="Cena?" id="checkbox-price" >
+               </span>
+            <input class="form-control col-md-6" name="price">
+        </div>
+        <div id="saveButton" class="btn btn-primary col-md-6">Zapisz</div>
     </div>
 </div>
+
+<!-- Form where will appear new Offer from addOffer -->
 <div id="comments">
-    <div class="btn btn-primary" onclick="showModal()">
+    <div class="btn btn-primary">
         Zgłoś ofertę</div>
     <div id="commentExample">
-        <div class="comment-header">
-            <div class="user"></div>
-            <div class="date"></div>
+        <div class="comment-header row w-75">
+            <div class="user col-md-3"></div>
+            <div class="date col-md-3"></div>
         </div>
         <div class="price"></div>
     </div>
 </div>
 
-<div class="modal-content"  id="myModal" style="display:none">
-    <div class="modal-header">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Czy chcesz licytować ten sprzęt?</h2>
-    </div>
-    <div class="modal-body">
-        <label>Twoja propozycja</label>
-        <div class="form-control">
-            <span class="input"><i class="fa fa-usd" aria-hidden="true"></i></span>
-            <input class="input" name="price">
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Czy chcesz licytować ten sprzęt?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>Twoja propozycja</label>
+                <div class="form-control">
+                    <span class="input"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                    <input class="input"  pattern="\d{3,6}" name="priceUser">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                <button type="button" class="btn btn-primary">Dodaj ofertę</button>
+            </div>
         </div>
-        <div onclick="addOffer()" class="btn btn-primary">
-            Zatwierdź</div>
-    </div>
-    <div class="modal-footer">
-        <h3>Wystawiając propozycję akceptujesz
-            <a href="#">regulamin</a>
-        </h3>
     </div>
 </div>
-
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/349ff579cf.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
+
+
 
 
 
